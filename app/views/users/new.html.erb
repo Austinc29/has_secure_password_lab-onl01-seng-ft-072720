@@ -1,8 +1,13 @@
-<h1> Log In </h1>
-<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-  Name: <input name="name" id="name">
+<h1> Sign Up </h1>
+<%= form_for(@user) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
   <br />
-  Password:<input name="password" id="password">
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br />
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
   <br /><br />
-  <input type="submit" value="login">
+  <%= f.submit %>
 <% end %>
